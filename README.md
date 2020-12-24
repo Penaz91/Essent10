@@ -4,7 +4,7 @@ Essent10
 Just a minimalistic (kinda) theme for Pelican
 ---------------------------------------------
 
-This is a theme that came out while working on my blog, it has lots of customization and doesn't use a single JavaScript statement for its operation.
+Esset10 (pronounced `Essentio`, because I'm weird like that) is a theme that came out while working on my blog, it has lots of customization and doesn't use a single JavaScript statement for its operation.
 
 It is responsive and supports the new `prefers-color-scheme` CSS directive, for us dark-mode lords.
 
