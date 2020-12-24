@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+{% block html_lang %}{{ article.lang }}{% endblock html_lang %}
+
+{% block title %}{{SITENAME}} - {{ article.title | striptags }}{% endblock  %}
+
+{% block css %}
+{{super()}}
+<link rel="preload" as="style" href="{{SITEURL}}/{{THEME_STATIC_DIR}}/styles/code_hilite.css" type="text/css" charset="utf-8"/>
+<link rel="stylesheet" href="{{SITEURL}}/{{THEME_STATIC_DIR}}/styles/code_hilite.css" type="text/css" charset="utf-8"/>
+{% endblock css %}
+
+{% block head %}
+{{super()}}
+{% import 'translations.html' as translations with context %}
+{% if translations.entry_hreflang(article) %}
+{{ translations.entry_hreflang(article) }}
+{% endif %}
+
+{% if article.description %}
+<meta name="description" content="{{article.description}}" />
+{% endif %}
+
+{% for tag in article.tags %}
+<meta name="tags" content="{{tag}}" />
+{% endfor %}
+{% endblock head %}
+
+{% block breadcrumb_list %}
+<li><a href="{{ SITEURL }}">{{ _('Home') }}</a></li>
+<li><a href="{{ article.category.url }}">{{ article.category }}</a></li>
+<li>{{ article.title | striptags | truncate(20, true, "...") }}</li>
+{% endblock breadcrumb_list %}
+
+{% block content %}
+<header id="entry-header">
+    <h1 class="title-center big-entry-title"><a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink per {{article.title | striptags}}">{{ article.title }}</a></h1>
+    <hr />
+    {# Info Box #}
+    <div class="entry-info">
+        <div class="flex-spacer"></div>
+        <div>
+            <div id="translations">
+                {% import 'translations.html' as translations with context %}
+                {{ translations.translations_for(article) }}
+            </div>
+            <div id="entry-published">
+                <span class="font-bold">{{ _('Published on') }}:</span> <time class="published" datetime="{{article.date.isoformat() }}">{{ article.locale_date }}</time>
+            </div>
+            {% if article.modified %}
+            <div id="entry-last-modified">
+                <span class="font-bold">{{ _('Last modified on') }}:</span> <time class="modified" datetime="{{ article.modified.isoformat() }}">{{ article.locale_modified }}</time>
+            </div>
+            {% endif %}
+            {% if article.authors %}
+            <div id="entry-authors">
+                <span class="font-bold">{{ _('By') }}:</span> {% for author in article.authors %}
+                <a rel="author" href="{{ SITEURL }}/{{ author.url }}">{{ author }}</a>
+                {% endfor %}
+            </div>
+            {% endif %}
+            {% if article.category %}
+            <div id="entry-category">
+                <span class="font-bold">{{ _('Category') }}:</span> <a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a>
+            </div>
+            {% endif %}
+            {% if article.tags %}
+            <div id="tags">
+                <span class="font-bold">{{ _('Tags') }}:</span>
+                {% for tag in article.tags %}
+                <a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a>
+                {% endfor %}
+            </div>
+            {% endif %}
+            {% if article.readtime_string %}
+            <span class="font-bold">{{ _('Est. Read Time') }}:</span> {{article.readtime_string}}
+            {% endif %}
+        </div>
+    </div>
+    {# ------------------------- #}
+</header>
+<article id="entry-content">
+    {{ article.content }}
+</article>
+<aside id="neighbors">
+    {% if article.prev_article %}
+    <a href="{{ SITEURL }}/{{ article.prev_article.url }}" rel="prev">&laquo; {{ article.prev_article.title | truncate(30, true, '...') }}</a>
+    {% else %}
+        <div class="flex-spacer"></div>
+    {% endif %}
+    {% if article.next_article %}
+        <a class="right-text-align" href="{{ SITEURL }}/{{ article.next_article.url }}" rel="next">{{ article.next_article.title | truncate(30, true, '...') }} &raquo;</a>
+    {% else %}
+        <div class="flex-spacer"></div>
+    {% endif %}
+</aside>
+{% endblock %}

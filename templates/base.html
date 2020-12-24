@@ -1,0 +1,182 @@
+{# If i18n is disabled, just do a standard % formatting #}
+{% if 'jinja2.ext.i18n' not in JINJA_ENVIRONMENT.extensions and 'jinja2.ext.i18n' not in JINJA_EXTENSIONS %}
+    {%- macro _(msg) -%}
+        {{ msg % kwargs }}
+    {%- endmacro -%}
+{% endif %}
+<!DOCTYPE html>
+<html lang="{% block html_lang %}{{ DEFAULT_LANG }}{% endblock html_lang %}">
+    <head>
+        {% block head %}
+            {# Standard Meta #}
+            <meta charset="UTF-8" />
+            <meta name="generator" content="Pelican">
+            <meta name="viewport" content="width=device-width" />
+            <meta name="theme-color" content="{{THEME_COLOR}}">
+            {# RSS Feeds #}
+            {% if FEED_ALL_ATOM %}
+                <link href="{{ FEED_DOMAIN }}/{% if FEED_ALL_ATOM_URL %}{{ FEED_ALL_ATOM_URL }}{% else %}{{ FEED_ALL_ATOM }}{% endif %}" type="application/atom+xml" rel="alternate" title="{{_('%(sitename)s Full Atom Feed', sitename=SITENAME)}}" />
+            {% endif %}
+            {% if FEED_ALL_RSS %}
+                <link href="{{ FEED_DOMAIN }}/{% if FEED_ALL_RSS_URL %}{{ FEED_ALL_RSS_URL }}{% else %}{{ FEED_ALL_RSS }}{% endif %}" type="application/rss+xml" rel="alternate" title="{{ _('%(sitename)s Full RSS Feed', sitename=SITENAME) }}" />
+            {% endif %}
+            {% if FEED_ATOM %}
+                <link href="{{ FEED_DOMAIN }}/{%if FEED_ATOM_URL %}{{ FEED_ATOM_URL }}{% else %}{{ FEED_ATOM }}{% endif %}" type="application/atom+xml" rel="alternate" title="{{ _('%(sitename)s Atom Feed', sitename=SITENAME) }}" />
+            {% endif %}
+            {% if FEED_RSS %}
+                <link href="{{ FEED_DOMAIN }}/{% if FEED_RSS_URL %}{{ FEED_RSS_URL }}{% else %}{{ FEED_RSS }}{% endif %}" type="application/rss+xml" rel="alternate" title="{{ _('%(sitename)s RSS Feed', sitename=SITENAME) }}" />
+            {% endif %}
+            {% if CATEGORY_FEED_ATOM and category %}
+                <link href="{{ FEED_DOMAIN }}/{% if CATEGORY_FEED_ATOM_URL %}{{ CATEGORY_FEED_ATOM_URL.format(slug=category.slug) }}{% else %}{{ CATEGORY_FEED_ATOM.format(slug=category.slug) }}{% endif %}" type="application/atom+xml" rel="alternate" title="{{ _('%(sitename)s Category Atom Feed', sitename=SITENAME) }}" />
+            {% endif %}
+            {% if CATEGORY_FEED_RSS and category %}
+                <link href="{{ FEED_DOMAIN }}/{% if CATEGORY_FEED_RSS_URL %}{{ CATEGORY_FEED_RSS_URL.format(slug=category.slug) }}{% else %}{{ CATEGORY_FEED_RSS.format(slug=category.slug) }}{% endif %}" type="application/rss+xml" rel="alternate" title="{{ _('%(sitename)s Category RSS Feed', sitename=SITENAME) }}" />
+            {% endif %}
+            {% if TAG_FEED_ATOM and tag %}
+                <link href="{{ FEED_DOMAIN }}/{% if TAG_FEED_ATOM_URL %}{{ TAG_FEED_ATOM_URL.format(slug=tag.slug) }}{% else %}{{ TAG_FEED_ATOM.format(slug=tag.slug) }}{% endif %}" type="application/atom+xml" rel="alternate" title="{{ _('%(sitename)s Tags Atom Feed', sitename=SITENAME) }}" />
+            {% endif %}
+            {% if TAG_FEED_RSS and tag %}
+                <link href="{{ FEED_DOMAIN }}/{% if TAG_FEED_RSS_URL %}{{ TAG_FEED_RSS_URL.format(slug=tag.slug) }}{% else %}{{ TAG_FEED_RSS.format(slug=tag.slug) }}{% endif %}" type="application/rss+xml" rel="alternate" title="{{ _('%(sitename)s Tags RSS Feed', sitename=SITENAME) }}" />
+            {% endif %}
+            {# CSS Styles #}
+            {% block css %}
+            <link rel="preload" as="style" href="{{SITEURL}}/{{THEME_STATIC_DIR}}/styles/style.css" type="text/css" charset="utf-8"/>
+            <link rel="stylesheet" href="{{SITEURL}}/{{THEME_STATIC_DIR}}/styles/style.css" type="text/css" charset="utf-8"/>
+            <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/styles/light.css" type="text/css" media="(prefers-color-scheme: light)" charset="utf-8">
+            <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/styles/dark.css" type="text/css" media="(prefers-color-scheme: dark)" charset="utf-8">
+            <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/styles/style_mobile.css" type="text/css" media="handheld, screen and (max-width: 800px)" charset="utf-8">
+            {% endblock css %}
+            {# Javascript #}
+            {% block javascript %}
+            <!-- Hack to avoid chrome to do a layout shift on load, check crbug.com/332189 and crbug.com/167083 -->
+            <script> </script>
+            {% endblock javascript %}
+            {# Website Title #}
+            <title>{% block title %}{{ SITENAME }}{% endblock title %}</title>
+            {# Additional Meta Tags #}
+            {% block meta %}{% endblock meta %}
+        {% endblock head %}
+    </head>
+    <body>
+        {# Site Header #}
+        <header class="main-header">
+            {# Button for toggling sidebar #}
+            <label for="menu_btn" id="menu_btn_lbl">&#9776;</label>
+            {% if LOGO_IMAGE %}
+                <a href="{{SITEURL}}" alt="Home Page">
+                    <img class="siteheader_img" width="200px" height="200px" src="{{SITEURL}}/{{LOGO_IMAGE}}" alt="Logo {{SITENAME}}"/>
+                </a>
+            {% else %}
+                <h1 class="siteheader"><a href="{{SITEURL}}" alt="Home Page">{{SITENAME}}</a></h1>
+            {% endif %}
+            {% if SITESUBTITLE %}
+                <h2 class="sitesubtitle mobile-hide">{{SITESUBTITLE}}</h2>
+            {% endif %}
+            {% if SEARCHBOX_ENABLED %}
+                <div class="flex-spacer"></div>
+                <form class="search_form desktop" action="{{ SEARCH_ENGINE_ADDR }}" method="get" accept-charset="utf-8" target="_blank">
+                    <label class="sr-only" for="id_{{TEXT_QUERY_NAME}}_desktop">{{ _('Search') }}:</label>
+                    <input type="text" placeholder="{{ _('Search...') }}" name="{{TEXT_QUERY_NAME}}" id="id_{{TEXT_QUERY_NAME}}_desktop" value="" />
+                    <input type="hidden" name="{{SITE_LIMIT_VAR_NAME}}" id="id_{{SITE_LIMIT_VAR_NAME}}_desktop" value="{{ SITEURL }}" />
+                    <button class="btn" type="submit" name="search" id="id_search_desktop">&#x1f50d; {{ _('Search') }}</button>
+                </form>
+            {% endif %}
+        </header>
+        <input type="checkbox" name="menu_btn" id="menu_btn">
+        <nav class="sidebar">
+            {# Search For Mobile #}
+            {% if SEARCHBOX_ENABLED %}
+                <form class="search_form mobile" action="{{ SEARCH_ENGINE_ADDR }}" method="get" accept-charset="utf-8" target="_blank">
+                    <label class="sr-only" for="id_{{TEXT_QUERY_NAME}}_mobile">{{ _('Search') }}:</label>
+                    <input type="text" placeholder="{{ _('Search...') }}" name="{{TEXT_QUERY_NAME}}" id="id_{{TEXT_QUERY_NAME}}_mobile" value="" />
+                    <input type="hidden" name="{{SITE_LIMIT_VAR_NAME}}" id="id_{{SITE_LIMIT_VAR_NAME}}_mobile" value="{{ SITEURL }}" />
+                    <button class="btn" type="submit" name="search" id="id_search_mobile">&#x1f50d; {{ _('Search') }}</button>
+                </form>
+            {% endif %}
+            {# Standard Menu #}
+            <ul>
+                {% for title, link in MENUITEMS %}
+                    <li><a href="{{ link }}">{{ title }}</a></li>
+                {% endfor %}
+            </ul>
+            {# Categories #}
+            {% if DISPLAY_CATEGORIES_ON_MENU %}
+            <h1>{{ _('Categories') }}</h1>
+            <ul>
+                {% for cat, null in categories %}
+                    <li {% if cat == category %}class="active"{% endif %}><a href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a></li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+            {# Pages #}
+            {% if DISPLAY_PAGES_ON_MENU %}
+            <h1>{{ _('Pages') }}</h1>
+            <ul>
+                {% for p in pages %}
+                    <li {% if p==page %}class="active"{% endif %}><a href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a></li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </nav>
+        <div class="content-container">
+            <div class="content">
+                {% if ENABLE_BREADCRUMBS %}
+                    {% block breadcrumbs %}
+                    <div class="breadcrumb{% if not BREADCRUMBS_ON_MOBILE %} mobile-hide{% endif %}">
+                        <ol>
+                            {% block breadcrumb_list %}
+                            {% endblock breadcrumb_list %}
+                        </ol>
+                    </div>
+                    {% endblock breadcrumbs %}
+                {% endif %}
+                {% block content %}
+                {% endblock content %}
+            </div>
+        </div>
+        <div class="flex-spacer"></div>
+        <footer class="main-footer">
+            <div class="footer_link_container">
+            {% if SOCIAL or LINK or FEED_ALL_ATOM or FEED_ALL_RSS %}
+                {% if SOCIAL %}
+                <div id="social">
+                    <span class="big_title">{{ SOCIAL_WIDGET_NAME | default("Social") }}</span>
+                    <ul>
+                        {% for name, link in SOCIAL %}
+                        <li><a href="{{ link }}">{{ name }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% endif %}
+                {% if LINKS %}
+                <div id="blogroll">
+                    <span class="big_title">{{ LINKS_WIDGET_NAME | default("Links") }}</span>
+                    <ul>
+                        {% for name, link in LINKS %}
+                        <li><a href="{{ link }}">{{ name }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% endif %}
+                {% if FEED_ALL_ATOM or FEED_ALL_RSS %}
+                <div id="feed">
+                    <span class="big_title">{{ FEED_WIDGET_NAME | default("Feed") }}</span>
+                    <ul>
+                        {% if FEED_ALL_ATOM %}
+                        <li><a href="{{ FEED_DOMAIN }}/{% if FEED_ALL_ATOM_URL %}{{ FEED_ALL_ATOM_URL }}{% else %}{{ FEED_ALL_ATOM }}{% endif %}" type="application/atom+xml" rel="alternate">{{ _('Atom Feed') }}</a></li>
+                        {% endif %}
+                        {% if FEED_ALL_RSS %}
+                        <li><a href="{{ FEED_DOMAIN }}/{% if FEED_ALL_RSS_URL %}{{ FEED_ALL_RSS_URL }}{% else %}{{ FEED_ALL_RSS }}{% endif %}" type="application/rss+xml" rel="alternate">{{ _('RSS Feed') }}</a></li>
+                        {% endif %}
+                    </ul>
+                </div>
+                {% endif %}
+                </div>
+                <div id="site_info">
+                    <p>{{ _('This website is proudly powered by %(pelican_link)s, which takes great advantage of %(python_link)s', pelican_link='<a href="https://getpelican.com/">Pelican</a>'|safe, python_link='<a href="https://www.python.org/">Python</a>'|safe) }}</p>
+                    <p>{{ _('Essent10 theme by Penaz') }}</p>
+                </div>
+            {% endif %}
+        </footer>
+    </body>
+</html>

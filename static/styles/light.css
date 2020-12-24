@@ -1,0 +1,15 @@
+:root{
+    --header-color: #3E454C;
+    --hover-sidebar-color: #ACACAC;
+    --sidebar-active-color: #E58D00;
+    --btn-hover-color: #E58D00;
+    --btn-hover-text-color: #000;
+    --main-color: #1C1C1C;
+    --background-color: #DDD;
+    --main-text-color: #000;
+    --header-text-color: #FFF;
+    --link-color: #002093;
+    --footer-link-color: #FF9D00;
+    --featured-background-color: #EEE;
+}
+

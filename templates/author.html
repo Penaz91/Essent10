@@ -1,0 +1,22 @@
+{% extends "index.html" %}
+
+{% block title %}{{ _('%(sitename)s - Posts by %(author)s', sitename=SITENAME, author=author) }}{% endblock %}
+
+{% if ENABLE_BREADCRUMBS %}
+    {% block breadcrumbs %}
+    <div class="breadcrumb{% if not BREADCRUMBS_ON_MOBILE %} mobile-hide{% endif %}">
+        <ol>
+            <li><a href="{{ SITEURL }}">{{ _('Home') }}</a></li>
+            <li>{{ _('Author: %(author)s', author=author) }}</li>
+        </ol>
+    </div>
+    {% endblock breadcrumbs %}
+{% endif %}
+
+{% block meta %}
+<meta name="description" content="{{ _('%(sitename)s: list of posts by %(author)s', sitename=SITENAME, author=author) }}">
+{% endblock meta %}
+
+{% block content_title %}
+<h1>{{ _('Posts by %(author)s', author=author) }}</h1>
+{% endblock %}

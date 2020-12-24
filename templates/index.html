@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block meta %}
+<meta name="description" content="{{ SITEDESC }}">
+{% endblock meta %}
+
+{# Don't view breadcrums in the index #}
+{% block breadcrumbs %}
+{% endblock breadcrumbs %}
+
+{% block content %}
+    {% block content_title %}{% endblock content_title %}
+    {% if articles %}
+        {% for article in articles_page.object_list %}
+            {# Featured Article #}
+            {% if loop.first and not articles_page.has_previous() %}
+                <article class="featured list-article">
+                    {% include "article_information.html" %}
+                </article>
+                {% if loop.length > 1 %}
+                <h2>{{ _("Other posts") }}</h2>
+                    <div class="article-list">
+                {% endif %}
+            {% else %}
+            {# Normal Article List #}
+                {% if loop.first %}
+                    <div class="article-list">
+                {% endif %}
+                <article class="list-article">
+                    {% include "article_information.html" %}
+                </article>
+                <hr />
+                {% if loop.last %}
+                    </div>
+                {% endif %}
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+    {% if articles_page.has_other_pages() %}
+    {% include "pagination.html" %}
+    {% endif %}
+{% endblock content %}

@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block html_lang %}{{ page.lang }}{% endblock %}
+
+{% block title %}{{ SITENAME }} - {{ page.title|striptags }}{%endblock%}
+
+{% block css %}
+{{super()}}
+<link rel="preload" as="style" href="{{SITEURL}}/{{THEME_STATIC_DIR}}/styles/code_hilite.css" type="text/css" charset="utf-8"/>
+<link rel="stylesheet" href="{{SITEURL}}/{{THEME_STATIC_DIR}}/styles/code_hilite.css" type="text/css" charset="utf-8"/>
+{% endblock css %}
+
+{% block head %}
+    {{ super() }}
+    {% import 'translations.html' as translations with context %}
+    {% if translations.entry_hreflang(page) %}
+        {{ translations.entry_hreflang(page) }}
+    {% endif %}
+{% endblock %}
+
+{% block breadcrumb_list %}
+<li><a href="{{ SITEURL }}">{{ _('Home') }}</a></li>
+<li>{{ page.title | striptags | truncate(20, true, "...") }}</li>
+{% endblock breadcrumb_list %}
+
+{% block content %}
+    {% if PAGES_AUTO_TITLE %}
+        <h1 class="title-center big-entry-title">{{ page.title }}</h1>
+    {% endif %}
+    <div class="entry-info">
+        <div class="flex-spacer"></div>
+        <div>
+            <div id="translations">
+                {% import 'translations.html' as translations with context %}
+                {{ translations.translations_for(page) }}
+            </div>
+            {% if page.modified %}
+            <div id="entry-last-modified">
+                <span class="font-bold">{{ _('Last Modified') }}:</span> {{ page.locale_modified }}
+            </div>
+            {% endif %}
+        </div>
+    </div>
+
+    {{ page.content }}
+
+{% endblock %}

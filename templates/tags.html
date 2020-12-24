@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}{{ _('%(sitename)s - Tags', sitename=SITENAME) }}{% endblock %}
+
+{% block meta %}
+<meta name="description" content="{{ _('%(sitename)s: List of available tags', sitename=SITENAME) }}">
+{% endblock meta %}
+
+{% block breadcrumb_list %}
+<li><a href="{{ SITEURL }}">{{ _('Home') }}</a></li>
+<li>{{ _('Tags') }}</li>
+{% endblock breadcrumb_list %}
+
+{% block content %}
+    <h1>{{ _('Tags for %(sitename)s', sitename=SITENAME) }}</h1>
+    <ul class="tags">
+    {% for tag, articles in tags|sort %}
+        <li><a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }} ({{ articles|count }})</a></li>
+    {% endfor %}
+    </ul>
+{% endblock %}

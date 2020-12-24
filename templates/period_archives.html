@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}{{ _('%(sitename)s - Archives for %(period)s', sitename=SITENAME, period=period|reverse|join(' ')) }}{% endblock %}
+
+{% block meta %}
+<meta name="description" content="{{ _('%(sitename)s - Archives for %(period)s', sitename=SITENAME, period=period|reverse|join(' ')) }}">
+{% endblock meta %}
+
+{% block breadcrumb_list %}
+<li><a href="{{ SITEURL }}">{{ _('Home') }}</a></li>
+<li>{{ _('Archives: %(period)s', period=period|reverse|join('')) }}</li>
+{% endblock breadcrumb_list %}
+
+{% block content %}
+<h1>{{ _('Archives for %(period)s', period=period|reverse|join(' ')) }}</h1>
+
+{% for article in dates %}
+    <article class="list-article">
+        {% include "article_information.html" %}
+    </article>
+    <hr />
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}{{ _('%(sitename)s - Authors', sitename=SITENAME) }}{% endblock %}
+
+{% block breadcrumb_list %}
+<li><a href="{{ SITEURL }}">{{ _('Home') }}</a></li>
+<li>{{ _('Authors') }}</li>
+{% endblock breadcrumb_list %}
+
+{% block meta %}
+<meta name="description" content="{{ _('%(sitename)s: List of all the authors', sitename=SITENAME) }}">
+{% endblock meta %}
+
+{% block content %}
+<h1>{{ _('Authors on %(sitename)s', sitename=SITENAME) }}</h1>
+    <ul>
+    {% for author, articles in authors|sort %}
+        <li><a href="{{ SITEURL }}/{{ author.url }}">{{ author }}</a> ({{ articles|count }})</li>
+    {% endfor %}
+    </ul>
+{% endblock %}

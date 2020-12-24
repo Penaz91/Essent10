@@ -1,0 +1,128 @@
+nav.sidebar{
+    width: 100vw;
+    left: -100vw;
+}
+
+input#menu_btn:checked ~ nav.sidebar{
+    left: 0;
+}
+
+footer.main-footer{
+    margin-left: 0;
+}
+
+div.content-container{
+    margin-left: 0;
+}
+
+div.content{
+    padding: .5rem;
+}
+
+.entry-info{
+    display: block;
+}
+
+.mobile-hide{
+    display: none;
+}
+
+pre{
+    margin: 1rem 0 1rem 1rem;
+}
+
+form.search_form.mobile{
+    display: block;
+    margin: 1rem auto;
+    text-align: center;
+}
+
+form.search_form.mobile input[type="text"]{
+    width: 65vw;
+}
+
+form.search_form.desktop{
+    display: none;
+}
+
+ul.tags li{
+    margin: 0.5rem;
+}
+
+ul.tags li a{
+    padding: 0.5rem;
+}
+
+article.featured{
+    padding: 0.5rem;
+}
+
+.big-entry-title{
+    font-size: 2.5rem;
+}
+
+h1{
+    font-size: 2rem;
+}
+
+h2{
+    font-size: 1.7rem;
+}
+
+h3{
+    font-size: 1.5rem;
+}
+
+h4{
+    font-size: 1.3rem;
+}
+
+h5{
+    font-size: 1.1rem;
+}
+
+h6{
+    font-size: 1rem;
+}
+
+/*
+ * Table Reflow Rules
+ */
+table.reflow, .reflow thead, .reflow tbody, .reflow th, .reflow td, .reflow tr, .reflow caption{
+    display: block;
+}
+
+table.reflow thead tr{
+    /*
+     * Hide the table head, we won't need it
+     */
+    position: absolute;
+    height: 0px;
+    border: none;
+    overflow: hidden;
+    left: -99999px;
+}
+
+table.reflow td{
+    padding-left: 40% !important;
+    overflow: auto !important;
+}
+
+table.reflow td{
+    position: relative !important;
+    min-height: 2.5em !important;
+}
+
+table.reflow td:before{
+    top: 6px !important;
+    left: 6px !important;
+    position: absolute !important;
+    width: 35% !important;
+    padding-right: .5em !important;
+    font-weight: bold;
+    content: attr(data-title);
+}
+
+table.reflow tr{
+    border-bottom: 1px solid #222222;
+}
