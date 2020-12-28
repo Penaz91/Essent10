@@ -2,9 +2,9 @@
 
 {% block title %}{{ _('%(sitename)s - %(category)s category', sitename=SITENAME, category=category) }}{% endblock %}
 
-{% if ENABLE_BREADCRUMBS %}
+{% if ENABLE_BREADCRUMBS | default(True) %}
     {% block breadcrumbs %}
-    <div class="breadcrumb{% if not BREADCRUMBS_ON_MOBILE %} mobile-hide{% endif %}">
+    <div class="breadcrumb{% if not BREADCRUMBS_ON_MOBILE | default(False) %} mobile-hide{% endif %}">
         <ol>
             <li><a href="{{ SITEURL }}">{{ _('Home') }}</a></li>
             <li>{{ _('Category: %(category)s', category=category) }}</li>

@@ -26,7 +26,7 @@
 {% endblock breadcrumb_list %}
 
 {% block content %}
-    {% if PAGES_AUTO_TITLE %}
+    {% if PAGES_AUTO_TITLE | default(False) %}
         <h1 class="title-center big-entry-title">{{ page.title }}</h1>
     {% endif %}
     <div class="entry-info">

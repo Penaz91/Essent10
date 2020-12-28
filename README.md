@@ -22,19 +22,37 @@ This plugin is compatible with (as far as I know):
 Options
 -------
 
-| Name                  | Description                                                                                                                          |
-| :--:                  | :---------:                                                                                                                          |
-| ENABLE_BREADCRUMBS    | Enables breadcrumb generation and visualization                                                                                      |
-| BREADCRUMBS_ON_MOBILE | When set to `false` it will hide breadcrumbs in "mobile mode"                                                                        |
-| THEME_COLOR           | Set a color so that Firefox OS and Chrome will adopt it                                                                              |
-| LOGO_IMAGE            | When set, it will replace the website title with and image (example: `logo.png`), use a filename relative to the root of the website |
-| SITESUBTITLE          | If set, will write a subtitle on the website header                                                                                  |
-| SOCIAL_WIDGET_NAME    | Change the name of the "Social" section in the footer                                                                                |
-| LINKS_WIDGET_NAME     | Change the name of the "blogroll" section in the footer                                                                              |
-| FEED_WIDGET_NAME      | Change the name of the "feeds" section in the footer                                                                                 |
-| PAGES_AUTO_TITLE      | When `false` won't show an `h1` title for pages, for maximum customization                                                           |
-| SITEDESC              | Site description (for `index.html`'s `<meta>` description)                                                                           |
-| SEARCHBOX_ENABLED     | Show the search box                                                                                                                  |
+| Name                       | Description                                                                                                                          | Default   |
+| :--:                       | :---------:                                                                                                                          | :-------: |
+| ENABLE_BREADCRUMBS         | Enables breadcrumb generation and visualization                                                                                      | `True`    |
+| BREADCRUMBS_ON_MOBILE      | When set to `false` it will hide breadcrumbs in "mobile mode"                                                                        | `False`   |
+| THEME_COLOR                | Set a color so that Firefox OS and Chrome will adopt it                                                                              | `#1C1C1C` |
+| LOGO_IMAGE                 | When set, it will replace the website title with and image (example: `logo.png`), use a filename relative to the root of the website | `None`    |
+| SITESUBTITLE               | If set, will write a subtitle on the website header                                                                                  | `None`    |
+| SOCIAL_WIDGET_NAME         | Change the name of the "Social" section in the footer                                                                                | `Social`  |
+| LINKS_WIDGET_NAME          | Change the name of the "blogroll" section in the footer                                                                              | `Links`   |
+| FEED_WIDGET_NAME           | Change the name of the "feeds" section in the footer                                                                                 | `Feed`    |
+| PAGES_AUTO_TITLE           | When `false` won't show an `h1` title for pages, for maximum customization                                                           | `False`   |
+| SITEDESC                   | Site description (for `index.html`'s `<meta>` description)                                                                           | `None`    |
+| SEARCHBOX_ENABLED          | Show the search box                                                                                                                  | `False`   |
+
+Social Sharing
+--------------
+
+The theme supports a non-intrusive, non-tracking, javascript-less set of social sharing buttons implemented in pure HTML.
+
+| Name                       | Description                                       | Default           |
+| SOCIAL_SHARING_ON_ARTICLES | Shows a "Social Sharing" box at the end of a post | `False`           |
+| SOCIAL_SHARING_ON_PAGES    | Shows a "Social Sharing" box at the end of a page | `False`           |
+| SOCIAL_SHARING_WIDGET_NAME | The title used on top of the "Social Sharing" box | `Share on social` |
+| TWITTER_SHARING_ENABLED    | Shows a "Share on Twitter" button                 | `True`            |
+| FACECBOOK_SHARING_ENABLED  | Shows a "Share on Facebook" button                | `True`            |
+| BUFFER_SHARING_ENABLED     | Shows a "Share on Buffer" button                  | `False`           |
+| LINKEDIN_SHARING_ENABLED   | Shows a "Share on LinkedIn" button                | `False`           |
+| PINTEREST_SHARING_ENABLED  | Shows a "Share on Pinterest" button               | `True`            |
+| REDDIT_SHARING_ENABLED     | Shows a "Share on Reddit" button                  | `True`            |
+| HACKERNEWS_SHARING_ENABLED | Shows a "Share on Hacker News" button             | `False`           |
+| EMAIL_SHARING_ENABLED      | Shows a "Share Via Email" button                  | `False`           |
 
 Search Box
 ----------

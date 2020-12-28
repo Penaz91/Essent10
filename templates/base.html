@@ -12,7 +12,7 @@
             <meta charset="UTF-8" />
             <meta name="generator" content="Pelican">
             <meta name="viewport" content="width=device-width" />
-            <meta name="theme-color" content="{{THEME_COLOR}}">
+            <meta name="theme-color" content="{{THEME_COLOR|default("#1C1C1C")}}">
             {# RSS Feeds #}
             {% if FEED_ALL_ATOM %}
                 <link href="{{ FEED_DOMAIN }}/{% if FEED_ALL_ATOM_URL %}{{ FEED_ALL_ATOM_URL }}{% else %}{{ FEED_ALL_ATOM }}{% endif %}" type="application/atom+xml" rel="alternate" title="{{_('%(sitename)s Full Atom Feed', sitename=SITENAME)}}" />
@@ -72,7 +72,7 @@
             {% if SITESUBTITLE %}
                 <h2 class="sitesubtitle mobile-hide">{{SITESUBTITLE}}</h2>
             {% endif %}
-            {% if SEARCHBOX_ENABLED %}
+            {% if SEARCHBOX_ENABLED | default(False) %}
                 <div class="flex-spacer"></div>
                 <form class="search_form desktop" action="{{ SEARCH_ENGINE_ADDR }}" method="get" accept-charset="utf-8" target="_blank">
                     <label class="sr-only" for="id_{{TEXT_QUERY_NAME}}_desktop">{{ _('Search') }}:</label>
@@ -85,7 +85,7 @@
         <input type="checkbox" name="menu_btn" id="menu_btn">
         <nav class="sidebar">
             {# Search For Mobile #}
-            {% if SEARCHBOX_ENABLED %}
+            {% if SEARCHBOX_ENABLED | default(False) %}
                 <form class="search_form mobile" action="{{ SEARCH_ENGINE_ADDR }}" method="get" accept-charset="utf-8" target="_blank">
                     <label class="sr-only" for="id_{{TEXT_QUERY_NAME}}_mobile">{{ _('Search') }}:</label>
                     <input type="text" placeholder="{{ _('Search...') }}" name="{{TEXT_QUERY_NAME}}" id="id_{{TEXT_QUERY_NAME}}_mobile" value="" />
@@ -120,9 +120,9 @@
         </nav>
         <div class="content-container">
             <div class="content">
-                {% if ENABLE_BREADCRUMBS %}
+                {% if ENABLE_BREADCRUMBS | default(True) %}
                     {% block breadcrumbs %}
-                    <div class="breadcrumb{% if not BREADCRUMBS_ON_MOBILE %} mobile-hide{% endif %}">
+                    <div class="breadcrumb{% if not BREADCRUMBS_ON_MOBILE | default(False) %} mobile-hide{% endif %}">
                         <ol>
                             {% block breadcrumb_list %}
                             {% endblock breadcrumb_list %}
