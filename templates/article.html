@@ -85,11 +85,8 @@
     {{ article.content }}
 </article>
 {% if SOCIAL_SHARING_ON_ARTICLES | default(False) %}
-<div class="sharing_box">
-    <span class="big_title">{{SOCIAL_SHARING_WIDGET_NAME | default("Share on social")}}</span>
     {% import 'social.html' as social with context %}
     {{ social.social_sharing_for(article) }}
-</div>
 {% endif %}
 <aside id="neighbors">
     {% if article.prev_article %}

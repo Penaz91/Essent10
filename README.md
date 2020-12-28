@@ -41,19 +41,18 @@ Social Sharing
 
 The theme supports a non-intrusive, non-tracking, javascript-less set of social sharing buttons implemented in pure HTML.
 
-| Name                       | Description                                       | Default           |
-| :------------------------: | :-----------------------------------------------: | :---------------: |
-| SOCIAL_SHARING_ON_ARTICLES | Shows a "Social Sharing" box at the end of a post | `False`           |
-| SOCIAL_SHARING_ON_PAGES    | Shows a "Social Sharing" box at the end of a page | `False`           |
-| SOCIAL_SHARING_WIDGET_NAME | The title used on top of the "Social Sharing" box | `Share on social` |
-| TWITTER_SHARING_ENABLED    | Shows a "Share on Twitter" button                 | `True`            |
-| FACECBOOK_SHARING_ENABLED  | Shows a "Share on Facebook" button                | `True`            |
-| BUFFER_SHARING_ENABLED     | Shows a "Share on Buffer" button                  | `False`           |
-| LINKEDIN_SHARING_ENABLED   | Shows a "Share on LinkedIn" button                | `False`           |
-| PINTEREST_SHARING_ENABLED  | Shows a "Share on Pinterest" button               | `True`            |
-| REDDIT_SHARING_ENABLED     | Shows a "Share on Reddit" button                  | `True`            |
-| HACKERNEWS_SHARING_ENABLED | Shows a "Share on Hacker News" button             | `False`           |
-| EMAIL_SHARING_ENABLED      | Shows a "Share Via Email" button                  | `False`           |
+| Name                       | Description                                       | Default    |
+| :------------------------: | :-----------------------------------------------: | :--------: |
+| SOCIAL_SHARING_ON_ARTICLES | Shows a "Social Sharing" box at the end of a post | `False`    |
+| SOCIAL_SHARING_ON_PAGES    | Shows a "Social Sharing" box at the end of a page | `False`    |
+| TWITTER_SHARING_ENABLED    | Shows a "Share on Twitter" button                 | `True`     |
+| FACECBOOK_SHARING_ENABLED  | Shows a "Share on Facebook" button                | `True`     |
+| BUFFER_SHARING_ENABLED     | Shows a "Share on Buffer" button                  | `False`    |
+| LINKEDIN_SHARING_ENABLED   | Shows a "Share on LinkedIn" button                | `False`    |
+| PINTEREST_SHARING_ENABLED  | Shows a "Share on Pinterest" button               | `True`     |
+| REDDIT_SHARING_ENABLED     | Shows a "Share on Reddit" button                  | `True`     |
+| HACKERNEWS_SHARING_ENABLED | Shows a "Share on Hacker News" button             | `False`    |
+| EMAIL_SHARING_ENABLED      | Shows a "Share Via Email" button                  | `False`    |
 
 Search Box
 ----------
