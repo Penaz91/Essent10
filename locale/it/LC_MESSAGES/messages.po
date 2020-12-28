@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-12-28 15:09+0100\n"
+"POT-Creation-Date: 2020-12-28 15:19+0100\n"
 "PO-Revision-Date: 2020-12-24 14:16+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: it\n"
@@ -244,6 +244,10 @@ msgstr "Archivi: %(period)s"
 #, python-format
 msgid "Archives for %(period)s"
 msgstr "Archivi %(period)s"
+
+#: templates/social.html:3
+msgid "Share on social"
+msgstr "Condividi sui social"
 
 #: templates/tag.html:3
 #, python-format
