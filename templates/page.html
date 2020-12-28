@@ -48,6 +48,6 @@
 
 {% if SOCIAL_SHARING_ON_ARTICLES | default(False) %}
     {% import 'social.html' as social with context %}
-    {{ social.social_sharing_for(article) }}
+    {{ social.social_sharing_for(page) }}
 {% endif %}
 {% endblock %}
