@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-12-24 21:17+0100\n"
+"POT-Creation-Date: 2020-12-28 15:09+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,8 +22,8 @@ msgstr ""
 msgid "%(sitename)s - Archives"
 msgstr ""
 
-#: templates/archives.html:6 templates/article.html:29 templates/author.html:9
-#: templates/authors.html:6 templates/category.html:9 templates/page.html:21
+#: templates/archives.html:6 templates/article.html:32 templates/author.html:9
+#: templates/authors.html:6 templates/category.html:9 templates/page.html:24
 #: templates/period_archives.html:10 templates/tag.html:13
 #: templates/tags.html:10
 msgid "Home"
@@ -38,27 +38,27 @@ msgstr ""
 msgid "Archives for %(sitename)s"
 msgstr ""
 
-#: templates/article.html:47 templates/article_information.html:7
+#: templates/article.html:50 templates/article_information.html:7
 msgid "Published on"
 msgstr ""
 
-#: templates/article.html:51
+#: templates/article.html:54
 msgid "Last modified on"
 msgstr ""
 
-#: templates/article.html:56 templates/article_information.html:9
+#: templates/article.html:59 templates/article_information.html:9
 msgid "By"
 msgstr ""
 
-#: templates/article.html:63
+#: templates/article.html:66
 msgid "Category"
 msgstr ""
 
-#: templates/article.html:68 templates/tags.html:11
+#: templates/article.html:71 templates/tags.html:11
 msgid "Tags"
 msgstr ""
 
-#: templates/article.html:75
+#: templates/article.html:78
 msgid "Est. Read Time"
 msgstr ""
 
@@ -155,36 +155,32 @@ msgstr ""
 msgid "Search..."
 msgstr ""
 
-#: templates/base.html:100
-#, python-format
-msgid "Switch to %(lang)s"
-msgstr ""
-
-#: templates/base.html:113
+#: templates/base.html:104
 msgid "Categories"
 msgstr ""
 
-#: templates/base.html:122
+#: templates/base.html:113
 msgid "Pages"
 msgstr ""
 
-#: templates/base.html:175
+#: templates/base.html:166
 msgid "Atom Feed"
 msgstr ""
 
-#: templates/base.html:178
+#: templates/base.html:169
 msgid "RSS Feed"
 msgstr ""
 
-#: templates/base.html:185
+#: templates/base.html:176
 #, python-format
 msgid ""
 "This website is proudly powered by %(pelican_link)s, which takes great "
 "advantage of %(python_link)s"
 msgstr ""
 
-#: templates/base.html:186
-msgid "Essent10 theme by Penaz"
+#: templates/base.html:177
+#, python-format
+msgid "%(theme_link)s theme by Penaz"
 msgstr ""
 
 #: templates/category.html:3
@@ -211,7 +207,7 @@ msgstr ""
 msgid "Other posts"
 msgstr ""
 
-#: templates/page.html:38
+#: templates/page.html:41
 msgid "Last Modified"
 msgstr ""
 
