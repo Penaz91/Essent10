@@ -10,7 +10,8 @@ ul.social_sharing{
 }
 
 ul.social_sharing li{
-    display: inline-block;
+    display: inline-flex;
+    flex-direction: row;
     margin: .25rem;
 }
 
