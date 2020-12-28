@@ -42,6 +42,7 @@ Social Sharing
 The theme supports a non-intrusive, non-tracking, javascript-less set of social sharing buttons implemented in pure HTML.
 
 | Name                       | Description                                       | Default           |
+| :------------------------: | :-----------------------------------------------: | :---------------: |
 | SOCIAL_SHARING_ON_ARTICLES | Shows a "Social Sharing" box at the end of a post | `False`           |
 | SOCIAL_SHARING_ON_PAGES    | Shows a "Social Sharing" box at the end of a page | `False`           |
 | SOCIAL_SHARING_WIDGET_NAME | The title used on top of the "Social Sharing" box | `Share on social` |
