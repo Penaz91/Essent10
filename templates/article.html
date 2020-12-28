@@ -7,6 +7,9 @@
 {{super()}}
 <link rel="preload" as="style" href="{{SITEURL}}/{{THEME_STATIC_DIR}}/styles/code_hilite.css" type="text/css" charset="utf-8"/>
 <link rel="stylesheet" href="{{SITEURL}}/{{THEME_STATIC_DIR}}/styles/code_hilite.css" type="text/css" charset="utf-8"/>
+{% if SOCIAL_SHARING_ON_ARTICLES | default(False) %}
+<link rel="stylesheet" href="{{SITEURL}}/{{THEME_STATIC_DIR}}/styles/social.css" type="text/css" charset="utf-8">
+{% endif %}
 {% endblock css %}
 
 {% block head %}
@@ -81,6 +84,13 @@
 <article id="entry-content">
     {{ article.content }}
 </article>
+{% if SOCIAL_SHARING_ON_ARTICLES | default(False) %}
+<div class="sharing_box">
+    <span class="big_title">{{SOCIAL_SHARING_WIDGET_NAME | default("Share on social")}}</span>
+    {% import 'social.html' as social with context %}
+    {{ social.social_sharing_for(article) }}
+</div>
+{% endif %}
 <aside id="neighbors">
     {% if article.prev_article %}
     <a href="{{ SITEURL }}/{{ article.prev_article.url }}" rel="prev">&laquo; {{ article.prev_article.title | truncate(30, true, '...') }}</a>

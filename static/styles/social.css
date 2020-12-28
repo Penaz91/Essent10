@@ -1,0 +1,136 @@
+div.sharing_box{
+    background: var(--share-box-background-color);
+    padding: 1rem;
+    margin-top: 1rem;
+}
+
+ul.social_sharing{
+    list-style: none;
+    margin: 1rem 0;
+}
+
+ul.social_sharing li{
+    display: inline-block;
+    margin: .25rem;
+}
+
+ul.social_sharing li a{
+    padding: .75rem;
+    text-decoration: none;
+}
+
+ul.social_sharing li a.twitter{
+    color: black;
+    background: #198FD7;
+    border-bottom: 3px solid #65AFDD;
+}
+
+ul.social_sharing li a.twitter:hover{
+    background: #65AFDD;
+}
+
+ul.social_sharing li a.twitter:active{
+    background: #226E9C;
+}
+
+ul.social_sharing li a.facebook{
+    color: black;
+    background: #1277F3;
+    border-bottom: 3px solid #2563AF;
+}
+
+ul.social_sharing li a.facebook:hover{
+    background: #2563AF;
+}
+
+ul.social_sharing li a.facebook:active{
+    color: white;
+    background: #264770;
+}
+
+ul.social_sharing li a.pinterest{
+    color: black;
+    background: #E60023;
+    border-bottom: 3px solid #A90E25;
+}
+
+ul.social_sharing li a.pinterest:hover{
+    background: #DB4960;
+}
+
+ul.social_sharing li a.pinterest:active{
+    background: #821929;
+}
+
+ul.social_sharing li a.reddit{
+    color: black;
+    background: #FF4500;
+    border-bottom: 3px solid #6C1F04;
+}
+
+ul.social_sharing li a.reddit:hover{
+    background: #EB602F;
+}
+
+ul.social_sharing li a.reddit:active{
+    color: white;
+    background: #6C1F04;
+}
+
+ul.social_sharing li a.email{
+    color: white;
+    background: #555555;
+    border-bottom: 3px solid #646464;
+}
+
+ul.social_sharing li a.email:hover{
+    background: #646464;
+}
+
+ul.social_sharing li a.email:active{
+    background: #000000;
+}
+
+ul.social_sharing li a.hackernews{
+    color: black;
+    background: #FF6600;
+    border-bottom: 3px solid #FF8737;
+}
+
+ul.social_sharing li a.hackernews:hover{
+    background: #FF8737;
+}
+
+ul.social_sharing li a.hackernews:active{
+    color: white;
+    background: #9C3F00;
+}
+
+ul.social_sharing li a.linkedin{
+    color: white;
+    background: #4875B4;
+    border-bottom: 3px solid #6C96D1;
+}
+
+ul.social_sharing li a.linkedin:hover{
+    background: #6c96D1;
+}
+
+ul.social_sharing li a.linkedin:active{
+    color: white;
+    background: #435F86;
+}
+
+ul.social_sharing li a.buffer{
+    color: white;
+    background: #555555;
+    border-bottom: 3px solid #646464;
+}
+
+ul.social_sharing li a.buffer:hover{
+    background: #646464;
+}
+
+ul.social_sharing li a.buffer:active{
+    background: #000000;
+}
