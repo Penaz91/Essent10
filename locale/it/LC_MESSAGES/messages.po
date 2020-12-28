@@ -193,7 +193,7 @@ msgstr "Tema Essent10 di Penaz"
 #: templates/category.html:3
 #, python-format
 msgid "%(sitename)s - %(category)s category"
-msgstr "%(sitename)s - Categoria %(category)"
+msgstr "%(sitename)s - Categoria %(category)s"
 
 #: templates/category.html:10
 #, python-format
