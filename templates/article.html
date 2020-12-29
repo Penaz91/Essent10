@@ -14,7 +14,7 @@
 
 {% block head %}
 {{super()}}
-{% import 'translations.html' as translations with context %}
+{% import 'partial/translations.html' as translations with context %}
 {% if translations.entry_hreflang(article) %}
 {{ translations.entry_hreflang(article) }}
 {% endif %}
@@ -43,7 +43,7 @@
         <div class="flex-spacer"></div>
         <div>
             <div id="translations">
-                {% import 'translations.html' as translations with context %}
+                {% import 'partial/translations.html' as translations with context %}
                 {{ translations.translations_for(article) }}
             </div>
             <div id="entry-published">
@@ -85,7 +85,7 @@
     {{ article.content }}
 </article>
 {% if SOCIAL_SHARING_ON_ARTICLES | default(False) %}
-    {% import 'social.html' as social with context %}
+    {% import 'partial/social.html' as social with context %}
     {{ social.social_sharing_for(article) }}
 {% endif %}
 <aside id="neighbors">
