@@ -59,6 +59,7 @@
     </head>
     <body>
         {# Site Header #}
+        <a id="skip-link" class="sr-only" href="#content" title="Skip to content">Skip to content</a>
         <header class="main-header">
             {# Button for toggling sidebar #}
             <label for="menu_btn" id="menu_btn_lbl">&#9776;</label>
@@ -130,8 +131,10 @@
                     </div>
                     {% endblock breadcrumbs %}
                 {% endif %}
-                {% block content %}
-                {% endblock content %}
+                <div id="content">
+                    {% block content %}
+                    {% endblock content %}
+                </div>
             </div>
         </div>
         <div class="flex-spacer"></div>

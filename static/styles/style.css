@@ -394,6 +394,15 @@ ul.tags li a{
     border: 0;
 }
 
+#skip-link:focus{
+    top: 2rem;
+    width: initial;
+    height: initial;
+    margin: initial;
+    overflow: initial;
+    border: 1px solid #AAA;
+}
+
 img{
     max-width: 100%;
     height: auto;
