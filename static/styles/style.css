@@ -401,6 +401,12 @@ ul.tags li a{
     margin: initial;
     overflow: initial;
     border: 1px solid #AAA;
+    left: 1rem;
+    z-index: 99999;
+    background: #FFF;
+    color: black;
+    padding: 1rem;
+    position: fixed;
 }
 
 img{
