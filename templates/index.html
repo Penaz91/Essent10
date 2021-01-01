@@ -14,7 +14,7 @@
             {# Featured Article #}
             {% if loop.first and not articles_page.has_previous() %}
                 <article class="featured list-article">
-                    {% include "article_information.html" %}
+                    {% include "partial/article_information.html" %}
                 </article>
                 {% if loop.length > 1 %}
                 <h2>{{ _("Other posts") }}</h2>
@@ -26,7 +26,7 @@
                     <div class="article-list">
                 {% endif %}
                 <article class="list-article">
-                    {% include "article_information.html" %}
+                    {% include "partial/article_information.html" %}
                 </article>
                 <hr />
                 {% if loop.last %}

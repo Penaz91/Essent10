@@ -1,0 +1,31 @@
+{% macro social_sharing_for(article) %}
+    <div class="sharing_box">
+        <span class="big_title">{{ _("Share on social") }}</span>
+        <ul class="social_sharing">
+            {% if TWITTER_SHARING_ENABLED | default(True) %}
+            <li><a class="twitter" {% if SOCIAL_SHARING_BLANK | default(True) %}rel="noopener" target="_blank" {% endif %}href="https://twitter.com/intent/tweet?text={{article.title|striptags}}&url={{SITEURL}}/{{article.url}}">Twitter</a></li>
+            {% endif %}
+            {% if FACEBOOK_SHARING_ENABLED | default(True) %}
+            <li><a class="facebook" {% if SOCIAL_SHARING_BLANK | default(True) %}rel="noopener" target="_blank" {% endif %}href="https://www.facebook.com/sharer/sharer.php?u={{SITEURL}}/{{article.url}}&t={{article.title|striptags}}">Facebook</a></li>
+            {% endif %}
+            {% if BUFFER_SHARING_ENABLED | default(False) %}
+            <li><a class="buffer" {% if SOCIAL_SHARING_BLANK | default(True) %}rel="noopener" target="_blank" {% endif %}href="https://bufferapp.com/add?url={{SITEURL}}/{{article.url}}&text={{article.title|striptags}}">Buffer</a></li>
+            {% endif %}
+            {% if LINKEDIN_SHARING_ENABLED | default(False) %}
+            <li><a class="linkedin" {% if SOCIAL_SHARING_BLANK | default(True) %}rel="noopener" target="_blank" {% endif %}href="https://www.linkedin.com/shareArticle?mini=true&url={{SITEURL}}/{{article.url}}&title={{article.title|striptags}}">LinkedIn</a></li>
+            {% endif %}
+            {% if PINTEREST_SHARING_ENABLED | default(True) %}
+            <li><a class="pinterest" {% if SOCIAL_SHARING_BLANK | default(True) %}rel="noopener" target="_blank" {% endif %}href="https://pinterest.com/pin/create/button/?url={{SITEURL}}/{{article.url}}&description={{article.title|striptags}}">Pinterest</a></li>
+            {% endif %}
+            {% if REDDIT_SHARING_ENABLED | default(True) %}
+            <li><a class="reddit" {% if SOCIAL_SHARING_BLANK | default(True) %}rel="noopener" target="_blank" {% endif %}href="https://reddit.com/submit?url={{SITEURL}}/{{article.url}}&title={{article.title|striptags}}">Reddit</a></li>
+            {% endif %}
+            {% if HACKERNEWS_SHARING_ENABLED | default(False) %}
+            <li><a class="hackernews" {% if SOCIAL_SHARING_BLANK | default(True) %}rel="noopener" target="_blank" {% endif %}href="https://news.ycombinator.com/submitlink?u={{SITEURL}}/{{article.url}}&t={{article.title|striptags}}">Hacker News</a></li>
+            {% endif %}
+            {% if EMAIL_SHARING_ENABLED | default(False) %}
+            <li> <a class="email" href="mailto:?subject={{article.title|striptags}}&body={{SITEURL}}/{{article.url}}">Email</a></li>
+            {% endif %}
+        </ul>
+    </div>
+{% endmacro %}
