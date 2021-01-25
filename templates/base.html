@@ -12,6 +12,8 @@
             <meta charset="UTF-8" />
             <meta name="generator" content="Pelican">
             <meta name="viewport" content="width=device-width" />
+            <meta name="supported-color-schemes" content="light dark">
+            <meta name="color-scheme" content="light dark">
             <meta name="theme-color" content="{{THEME_COLOR|default("#1C1C1C")}}">
             {# RSS Feeds #}
             {% if FEED_ALL_ATOM %}
@@ -40,10 +42,10 @@
             {% endif %}
             {# CSS Styles #}
             {% block css %}
+            <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/styles/light.css" type="text/css" media="(prefers-color-scheme: no-preference), (prefers-color-scheme: light)" charset="utf-8">
+            <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/styles/dark.css" type="text/css" media="(prefers-color-scheme: dark)" charset="utf-8">
             <link rel="preload" as="style" href="{{SITEURL}}/{{THEME_STATIC_DIR}}/styles/style.css" type="text/css" charset="utf-8"/>
             <link rel="stylesheet" href="{{SITEURL}}/{{THEME_STATIC_DIR}}/styles/style.css" type="text/css" charset="utf-8"/>
-            <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/styles/light.css" type="text/css" media="(prefers-color-scheme: light)" charset="utf-8">
-            <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/styles/dark.css" type="text/css" media="(prefers-color-scheme: dark)" charset="utf-8">
             <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/styles/style_mobile.css" type="text/css" media="handheld, screen and (max-width: 800px)" charset="utf-8">
             {% endblock css %}
             {# Javascript #}
