@@ -125,6 +125,7 @@ header.main-header{
     right: 0;
     height: var(--header-height);
     top: 0;
+    z-index: 999;
 }
 
 .siteheader{

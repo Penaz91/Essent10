@@ -13,3 +13,8 @@
     --featured-background-color: #222;
     --share-box-background-color: #222;
 }
+
+/* This is useful for avoid too bright stuff on dark mode*/
+img{
+    filter: brightness(.8) contrast(1.2);
+}
