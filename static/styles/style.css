@@ -5,6 +5,7 @@
 }
 
 :root{
+    supported-color-schemes: light dark;
     color-scheme: light dark;
     --sidebar-width: 15rem;
     --header-height: 5rem;
@@ -134,7 +135,7 @@ header.main-header{
 .siteheader_img{
     display: inline-block;
     margin-left: 2rem;
-    max-height: calc(var(--header-height) - 1rem);
+    max-height: calc(var(--header-height) - 2rem);
     width: auto;
 }
 
@@ -411,8 +412,10 @@ ul.tags li a{
 }
 
 img{
+    display: block;
     max-width: 100%;
     height: auto;
+    margin: auto;
 }
 
 div.breadcrumb{
