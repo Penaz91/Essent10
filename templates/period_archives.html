@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block title %}{{ _('%(sitename)s - Archives for %(period)s', sitename=SITENAME, period=period|reverse|join(' ')) }}{% endblock %}
+{% block title %}{{ _('Archives for %(period)s - %(sitename)s', sitename=SITENAME, period=period|reverse|join(' ')) }}{% endblock %}
 
 {% block meta %}
 <meta name="description" content="{{ _('%(sitename)s - Archives for %(period)s', sitename=SITENAME, period=period|reverse|join(' ')) }}">

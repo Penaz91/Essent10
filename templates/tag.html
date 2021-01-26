@@ -1,6 +1,6 @@
 {% extends "index.html" %}
 
-{% block title %}{{ _('%(sitename)s - %(tag)s tag', sitename=SITENAME, tag=tag) }}{% endblock %}
+{% block title %}{{ _('%(tag)s tag - %(sitename)s', sitename=SITENAME, tag=tag) }}{% endblock %}
 
 {% block meta %}
 <meta name="description" content="{{ _('%(sitename)s: list of posts tagged %(tag)s', sitename=SITENAME, tag=tag) }}">

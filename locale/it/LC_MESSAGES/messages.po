@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-12-28 15:19+0100\n"
+"POT-Creation-Date: 2021-01-26 16:51+0100\n"
 "PO-Revision-Date: 2020-12-24 14:16+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: it\n"
@@ -20,11 +20,11 @@ msgstr ""
 
 #: templates/archives.html:3
 #, python-format
-msgid "%(sitename)s - Archives"
-msgstr "%(sitename)s - Archivi"
+msgid "Archives - %(sitename)s"
+msgstr "Archivi - %(sitename)s"
 
-#: templates/archives.html:6 templates/article.html:32 templates/author.html:9
-#: templates/authors.html:6 templates/category.html:9 templates/page.html:24
+#: templates/archives.html:6 templates/article.html:35 templates/author.html:9
+#: templates/authors.html:6 templates/category.html:9 templates/page.html:31
 #: templates/period_archives.html:10 templates/tag.html:13
 #: templates/tags.html:10
 msgid "Home"
@@ -39,39 +39,34 @@ msgstr "Archivi"
 msgid "Archives for %(sitename)s"
 msgstr "Archivi per %(sitename)s"
 
-#: templates/article.html:50 templates/article_information.html:7
+#: templates/article.html:53 templates/partial/article_information.html:7
 msgid "Published on"
 msgstr "Pubblicato il"
 
-#: templates/article.html:54
+#: templates/article.html:57
 msgid "Last modified on"
 msgstr "Ultima Modifica il"
 
-#: templates/article.html:59 templates/article_information.html:9
+#: templates/article.html:62 templates/partial/article_information.html:9
 msgid "By"
 msgstr "Di"
 
-#: templates/article.html:66
+#: templates/article.html:69
 msgid "Category"
 msgstr "Categoria"
 
-#: templates/article.html:71 templates/tags.html:11
+#: templates/article.html:74 templates/tags.html:11
 msgid "Tags"
 msgstr "Tags"
 
-#: templates/article.html:78
+#: templates/article.html:81
 msgid "Est. Read Time"
 msgstr "Tempo di Lettura"
 
-#: templates/article_information.html:2
-#, python-format
-msgid "Permalink to %(art_title)s"
-msgstr "Permalink per %(art_title)s"
-
 #: templates/author.html:3
 #, python-format
-msgid "%(sitename)s - Posts by %(author)s"
-msgstr "%(sitename)s - Articoli di %(author)s"
+msgid "Posts by %(author)s - %(sitename)s"
+msgstr "Post di %(author)s - %(sitename)s"
 
 #: templates/author.html:10
 #, python-format
@@ -90,8 +85,8 @@ msgstr "Posts di %(author)s"
 
 #: templates/authors.html:3
 #, python-format
-msgid "%(sitename)s - Authors"
-msgstr "%(sitename)s - Autori"
+msgid "Authors - %(sitename)s"
+msgstr "Autori - %(sitename)s"
 
 #: templates/authors.html:7
 msgid "Authors"
@@ -107,72 +102,72 @@ msgstr "%(sitename)s: Lista di tutti gli autori"
 msgid "Authors on %(sitename)s"
 msgstr "Autori su %(sitename)s"
 
-#: templates/base.html:18
+#: templates/base.html:20
 #, python-format
 msgid "%(sitename)s Full Atom Feed"
 msgstr "Feed Atom completo di %(sitename)s"
 
-#: templates/base.html:21
+#: templates/base.html:23
 #, python-format
 msgid "%(sitename)s Full RSS Feed"
 msgstr "Feed RSS completo di %(sitename)s"
 
-#: templates/base.html:24
+#: templates/base.html:26
 #, python-format
 msgid "%(sitename)s Atom Feed"
 msgstr "Feed Atom di %(sitename)s"
 
-#: templates/base.html:27
+#: templates/base.html:29
 #, python-format
 msgid "%(sitename)s RSS Feed"
 msgstr "Feed RSS di %(sitename)s"
 
-#: templates/base.html:30
+#: templates/base.html:32
 #, python-format
 msgid "%(sitename)s Category Atom Feed"
 msgstr "Feed Atom per categoria di %(sitename)s"
 
-#: templates/base.html:33
+#: templates/base.html:35
 #, python-format
 msgid "%(sitename)s Category RSS Feed"
 msgstr "Feed RSS per categoria di %(sitename)s"
 
-#: templates/base.html:36
+#: templates/base.html:38
 #, python-format
 msgid "%(sitename)s Tags Atom Feed"
 msgstr "Feed Atomr per Tag di %(sitename)s"
 
-#: templates/base.html:39
+#: templates/base.html:41
 #, python-format
 msgid "%(sitename)s Tags RSS Feed"
 msgstr "Feed RSS per Tag di %(sitename)s"
 
-#: templates/base.html:78 templates/base.html:81 templates/base.html:90
-#: templates/base.html:93
+#: templates/base.html:81 templates/base.html:84 templates/base.html:93
+#: templates/base.html:96
 msgid "Search"
 msgstr "Cerca"
 
-#: templates/base.html:79 templates/base.html:91
+#: templates/base.html:82 templates/base.html:94
 msgid "Search..."
 msgstr "Cerca..."
 
-#: templates/base.html:104
+#: templates/base.html:107
 msgid "Categories"
 msgstr "Categorie"
 
-#: templates/base.html:113
+#: templates/base.html:116
 msgid "Pages"
 msgstr "Pagine"
 
-#: templates/base.html:166
+#: templates/base.html:171
 msgid "Atom Feed"
 msgstr "Feed Atom"
 
-#: templates/base.html:169
+#: templates/base.html:174
 msgid "RSS Feed"
 msgstr "Feed RSS"
 
-#: templates/base.html:176
+#: templates/base.html:187
 #, python-format
 msgid ""
 "This website is proudly powered by %(pelican_link)s, which takes great "
@@ -181,15 +176,15 @@ msgstr ""
 "Questo sito è fieramente fornito da %(pelican_link)s, che fa gran uso di "
 "%(python_link)s"
 
-#: templates/base.html:177
+#: templates/base.html:189
 #, python-format
 msgid "%(theme_link)s theme by Penaz"
 msgstr "Tema %(theme_link)s di Penaz"
 
 #: templates/category.html:3
 #, python-format
-msgid "%(sitename)s - %(category)s category"
-msgstr "%(sitename)s - Categoria %(category)s"
+msgid "%(category)s category - %(sitename)s"
+msgstr "Categoria %(category)s - %(sitename)s"
 
 #: templates/category.html:10
 #, python-format
@@ -210,7 +205,7 @@ msgstr "Articoli nella categoria %(category)s"
 msgid "Other posts"
 msgstr "Altri Articoli"
 
-#: templates/page.html:41
+#: templates/page.html:48
 msgid "Last Modified"
 msgstr "Ultima Modifica"
 
@@ -230,7 +225,12 @@ msgstr "Pagina"
 msgid "Go to the next page"
 msgstr "Vai alla prossima pagina"
 
-#: templates/period_archives.html:3 templates/period_archives.html:6
+#: templates/period_archives.html:3
+#, python-format
+msgid "Archives for %(period)s - %(sitename)s"
+msgstr "Archivi per %(period)s - %(sitename)s"
+
+#: templates/period_archives.html:6
 #, python-format
 msgid "%(sitename)s - Archives for %(period)s"
 msgstr "%(sitename)s - Archivi %(period)s"
@@ -245,14 +245,10 @@ msgstr "Archivi: %(period)s"
 msgid "Archives for %(period)s"
 msgstr "Archivi %(period)s"
 
-#: templates/social.html:3
-msgid "Share on social"
-msgstr "Condividi sui social"
-
 #: templates/tag.html:3
 #, python-format
-msgid "%(sitename)s - %(tag)s tag"
-msgstr "%(sitename)s - Tag %(tag)s"
+msgid "%(tag)s tag - %(sitename)s"
+msgstr "Tag %(tag)s - %(sitename)s"
 
 #: templates/tag.html:6
 #, python-format
@@ -271,8 +267,8 @@ msgstr "Articoli con tag %(tag)s"
 
 #: templates/tags.html:3
 #, python-format
-msgid "%(sitename)s - Tags"
-msgstr "%(sitename)s - Tag"
+msgid "Tags - %(sitename)s"
+msgstr "Tags - %(sitename)s"
 
 #: templates/tags.html:6
 #, python-format
@@ -284,7 +280,16 @@ msgstr "%(sitename)s: Lista dei tag disponibili"
 msgid "Tags for %(sitename)s"
 msgstr "Tag di %(sitename)s"
 
-#: templates/translations.html:3
+#: templates/partial/article_information.html:2
+#, python-format
+msgid "Permalink to %(art_title)s"
+msgstr "Permalink per %(art_title)s"
+
+#: templates/partial/social.html:3
+msgid "Share on social"
+msgstr "Condividi sui social"
+
+#: templates/partial/translations.html:3
 msgid "Translations"
 msgstr "Traduzioni"
 
@@ -293,4 +298,22 @@ msgstr "Traduzioni"
 
 #~ msgid "Essent10 theme by Penaz"
 #~ msgstr "Tema Essent10 di Penaz"
+
+#~ msgid "%(sitename)s - Archives"
+#~ msgstr "%(sitename)s - Archivi"
+
+#~ msgid "%(sitename)s - Posts by %(author)s"
+#~ msgstr "%(sitename)s - Articoli di %(author)s"
+
+#~ msgid "%(sitename)s - Authors"
+#~ msgstr "%(sitename)s - Autori"
+
+#~ msgid "%(sitename)s - %(category)s category"
+#~ msgstr "%(sitename)s - Categoria %(category)s"
+
+#~ msgid "%(sitename)s - %(tag)s tag"
+#~ msgstr "%(sitename)s - Tag %(tag)s"
+
+#~ msgid "%(sitename)s - Tags"
+#~ msgstr "%(sitename)s - Tag"
 

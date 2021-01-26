@@ -1,6 +1,6 @@
 {% extends "index.html" %}
 
-{% block title %}{{ _('%(sitename)s - Posts by %(author)s', sitename=SITENAME, author=author) }}{% endblock %}
+{% block title %}{{ _('Posts by %(author)s - %(sitename)s', sitename=SITENAME, author=author) }}{% endblock %}
 
 {% if ENABLE_BREADCRUMBS | default(True) %}
     {% block breadcrumbs %}
