@@ -1,14 +1,14 @@
 # Translations template for PROJECT.
-# Copyright (C) 2020 ORGANIZATION
+# Copyright (C) 2021 ORGANIZATION
 # This file is distributed under the same license as the PROJECT project.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
 #
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-12-28 15:19+0100\n"
+"POT-Creation-Date: 2021-01-26 16:51+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,11 +19,11 @@ msgstr ""
 
 #: templates/archives.html:3
 #, python-format
-msgid "%(sitename)s - Archives"
+msgid "Archives - %(sitename)s"
 msgstr ""
 
-#: templates/archives.html:6 templates/article.html:32 templates/author.html:9
-#: templates/authors.html:6 templates/category.html:9 templates/page.html:24
+#: templates/archives.html:6 templates/article.html:35 templates/author.html:9
+#: templates/authors.html:6 templates/category.html:9 templates/page.html:31
 #: templates/period_archives.html:10 templates/tag.html:13
 #: templates/tags.html:10
 msgid "Home"
@@ -38,38 +38,33 @@ msgstr ""
 msgid "Archives for %(sitename)s"
 msgstr ""
 
-#: templates/article.html:50 templates/article_information.html:7
+#: templates/article.html:53 templates/partial/article_information.html:7
 msgid "Published on"
 msgstr ""
 
-#: templates/article.html:54
+#: templates/article.html:57
 msgid "Last modified on"
 msgstr ""
 
-#: templates/article.html:59 templates/article_information.html:9
+#: templates/article.html:62 templates/partial/article_information.html:9
 msgid "By"
 msgstr ""
 
-#: templates/article.html:66
+#: templates/article.html:69
 msgid "Category"
 msgstr ""
 
-#: templates/article.html:71 templates/tags.html:11
+#: templates/article.html:74 templates/tags.html:11
 msgid "Tags"
 msgstr ""
 
-#: templates/article.html:78
+#: templates/article.html:81
 msgid "Est. Read Time"
-msgstr ""
-
-#: templates/article_information.html:2
-#, python-format
-msgid "Permalink to %(art_title)s"
 msgstr ""
 
 #: templates/author.html:3
 #, python-format
-msgid "%(sitename)s - Posts by %(author)s"
+msgid "Posts by %(author)s - %(sitename)s"
 msgstr ""
 
 #: templates/author.html:10
@@ -89,7 +84,7 @@ msgstr ""
 
 #: templates/authors.html:3
 #, python-format
-msgid "%(sitename)s - Authors"
+msgid "Authors - %(sitename)s"
 msgstr ""
 
 #: templates/authors.html:7
@@ -106,86 +101,86 @@ msgstr ""
 msgid "Authors on %(sitename)s"
 msgstr ""
 
-#: templates/base.html:18
+#: templates/base.html:20
 #, python-format
 msgid "%(sitename)s Full Atom Feed"
 msgstr ""
 
-#: templates/base.html:21
+#: templates/base.html:23
 #, python-format
 msgid "%(sitename)s Full RSS Feed"
 msgstr ""
 
-#: templates/base.html:24
+#: templates/base.html:26
 #, python-format
 msgid "%(sitename)s Atom Feed"
 msgstr ""
 
-#: templates/base.html:27
+#: templates/base.html:29
 #, python-format
 msgid "%(sitename)s RSS Feed"
 msgstr ""
 
-#: templates/base.html:30
+#: templates/base.html:32
 #, python-format
 msgid "%(sitename)s Category Atom Feed"
 msgstr ""
 
-#: templates/base.html:33
+#: templates/base.html:35
 #, python-format
 msgid "%(sitename)s Category RSS Feed"
 msgstr ""
 
-#: templates/base.html:36
+#: templates/base.html:38
 #, python-format
 msgid "%(sitename)s Tags Atom Feed"
 msgstr ""
 
-#: templates/base.html:39
+#: templates/base.html:41
 #, python-format
 msgid "%(sitename)s Tags RSS Feed"
 msgstr ""
 
-#: templates/base.html:78 templates/base.html:81 templates/base.html:90
-#: templates/base.html:93
+#: templates/base.html:81 templates/base.html:84 templates/base.html:93
+#: templates/base.html:96
 msgid "Search"
 msgstr ""
 
-#: templates/base.html:79 templates/base.html:91
+#: templates/base.html:82 templates/base.html:94
 msgid "Search..."
 msgstr ""
 
-#: templates/base.html:104
+#: templates/base.html:107
 msgid "Categories"
 msgstr ""
 
-#: templates/base.html:113
+#: templates/base.html:116
 msgid "Pages"
 msgstr ""
 
-#: templates/base.html:166
+#: templates/base.html:171
 msgid "Atom Feed"
 msgstr ""
 
-#: templates/base.html:169
+#: templates/base.html:174
 msgid "RSS Feed"
 msgstr ""
 
-#: templates/base.html:176
+#: templates/base.html:187
 #, python-format
 msgid ""
 "This website is proudly powered by %(pelican_link)s, which takes great "
 "advantage of %(python_link)s"
 msgstr ""
 
-#: templates/base.html:177
+#: templates/base.html:189
 #, python-format
 msgid "%(theme_link)s theme by Penaz"
 msgstr ""
 
 #: templates/category.html:3
 #, python-format
-msgid "%(sitename)s - %(category)s category"
+msgid "%(category)s category - %(sitename)s"
 msgstr ""
 
 #: templates/category.html:10
@@ -207,7 +202,7 @@ msgstr ""
 msgid "Other posts"
 msgstr ""
 
-#: templates/page.html:41
+#: templates/page.html:48
 msgid "Last Modified"
 msgstr ""
 
@@ -227,7 +222,12 @@ msgstr ""
 msgid "Go to the next page"
 msgstr ""
 
-#: templates/period_archives.html:3 templates/period_archives.html:6
+#: templates/period_archives.html:3
+#, python-format
+msgid "Archives for %(period)s - %(sitename)s"
+msgstr ""
+
+#: templates/period_archives.html:6
 #, python-format
 msgid "%(sitename)s - Archives for %(period)s"
 msgstr ""
@@ -242,13 +242,9 @@ msgstr ""
 msgid "Archives for %(period)s"
 msgstr ""
 
-#: templates/social.html:3
-msgid "Share on social"
-msgstr ""
-
 #: templates/tag.html:3
 #, python-format
-msgid "%(sitename)s - %(tag)s tag"
+msgid "%(tag)s tag - %(sitename)s"
 msgstr ""
 
 #: templates/tag.html:6
@@ -268,7 +264,7 @@ msgstr ""
 
 #: templates/tags.html:3
 #, python-format
-msgid "%(sitename)s - Tags"
+msgid "Tags - %(sitename)s"
 msgstr ""
 
 #: templates/tags.html:6
@@ -281,7 +277,16 @@ msgstr ""
 msgid "Tags for %(sitename)s"
 msgstr ""
 
-#: templates/translations.html:3
+#: templates/partial/article_information.html:2
+#, python-format
+msgid "Permalink to %(art_title)s"
+msgstr ""
+
+#: templates/partial/social.html:3
+msgid "Share on social"
+msgstr ""
+
+#: templates/partial/translations.html:3
 msgid "Translations"
 msgstr ""
 

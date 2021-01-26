@@ -1,6 +1,6 @@
 {% extends "index.html" %}
 
-{% block title %}{{ _('%(sitename)s - %(category)s category', sitename=SITENAME, category=category) }}{% endblock %}
+{% block title %}{{ _('%(category)s category - %(sitename)s', sitename=SITENAME, category=category) }}{% endblock %}
 
 {% if ENABLE_BREADCRUMBS | default(True) %}
     {% block breadcrumbs %}
