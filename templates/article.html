@@ -18,7 +18,10 @@
 {% if translations.entry_hreflang(article) %}
 {{ translations.entry_hreflang(article) }}
 {% endif %}
+{% endblock head %}
 
+{% block meta %}
+{{super()}}
 {% if article.description %}
 <meta name="description" content="{{article.description}}" />
 {% endif %}
@@ -26,7 +29,7 @@
 {% for tag in article.tags %}
 <meta name="tags" content="{{tag}}" />
 {% endfor %}
-{% endblock head %}
+{% endblock meta %}
 
 {% block breadcrumb_list %}
 <li><a href="{{ SITEURL }}">{{ _('Home') }}</a></li>
