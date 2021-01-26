@@ -20,6 +20,13 @@
     {% endif %}
 {% endblock %}
 
+{% block meta %}
+    {{super()}}
+    {% if page.description %}
+    <meta name="description" content="{{page.description}}" />
+    {% endif %}
+{% endblock %}
+
 {% block breadcrumb_list %}
 <li><a href="{{ SITEURL }}">{{ _('Home') }}</a></li>
 <li>{{ page.title | striptags | truncate(20, true, "...") }}</li>
