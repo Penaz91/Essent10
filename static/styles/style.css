@@ -132,6 +132,8 @@ header.main-header{
 .siteheader{
     margin-left: 2rem;
     margin-bottom: 0;
+    margin-top: 1.5rem;
+    font-size: 1.5rem;
 }
 
 .siteheader_img{
@@ -192,12 +194,13 @@ nav.sidebar{
     overflow-y: auto;
 }
 
-nav.sidebar h1{
+nav .menutitle{
     font-size: 1.5rem;
     font-weight:bolder;
     margin-top: 1.5rem;
     margin-bottom: 0.5rem;
     margin-left: 1rem;
+    display: block;
 }
 
 nav.sidebar li{

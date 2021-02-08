@@ -70,7 +70,7 @@
                     <img class="siteheader_img" width="200px" height="200px" src="{{LOGO_IMAGE}}" alt="Logo {{SITENAME}}"/>
                 </a>
             {% else %}
-                <h1 class="siteheader"><a href="{{SITEURL}}" alt="Home Page">{{SITENAME}}</a></h1>
+                <span class="siteheader"><a href="{{SITEURL}}" alt="Home Page">{{SITENAME}}</a></span>
             {% endif %}
             {% if SITESUBTITLE %}
                 <h2 class="sitesubtitle mobile-hide">{{SITESUBTITLE}}</h2>
@@ -104,7 +104,7 @@
             </ul>
             {# Categories #}
             {% if DISPLAY_CATEGORIES_ON_MENU %}
-            <h1>{{ _('Categories') }}</h1>
+            <span class="menutitle">{{ _('Categories') }}</span>
             <ul>
                 {% for cat, null in categories %}
                     <li {% if cat == category %}class="active"{% endif %}><a href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a></li>
@@ -113,7 +113,7 @@
             {% endif %}
             {# Pages #}
             {% if DISPLAY_PAGES_ON_MENU %}
-            <h1>{{ _('Pages') }}</h1>
+            <span class="menutitle">{{ _('Pages') }}</span>
             <ul>
                 {% for p in pages %}
                     <li {% if p==page %}class="active"{% endif %}><a href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a></li>
