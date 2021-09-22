@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-01-26 16:51+0100\n"
+"POT-Creation-Date: 2021-01-26 16:55+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -141,39 +141,39 @@ msgstr ""
 msgid "%(sitename)s Tags RSS Feed"
 msgstr ""
 
-#: templates/base.html:81 templates/base.html:84 templates/base.html:93
-#: templates/base.html:96
+#: templates/base.html:87 templates/base.html:90 templates/base.html:99
+#: templates/base.html:102
 msgid "Search"
 msgstr ""
 
-#: templates/base.html:82 templates/base.html:94
+#: templates/base.html:88 templates/base.html:100
 msgid "Search..."
 msgstr ""
 
-#: templates/base.html:107
+#: templates/base.html:113
 msgid "Categories"
 msgstr ""
 
-#: templates/base.html:116
+#: templates/base.html:122
 msgid "Pages"
 msgstr ""
 
-#: templates/base.html:171
+#: templates/base.html:177
 msgid "Atom Feed"
 msgstr ""
 
-#: templates/base.html:174
+#: templates/base.html:180
 msgid "RSS Feed"
 msgstr ""
 
-#: templates/base.html:187
+#: templates/base.html:193
 #, python-format
 msgid ""
 "This website is proudly powered by %(pelican_link)s, which takes great "
 "advantage of %(python_link)s"
 msgstr ""
 
-#: templates/base.html:189
+#: templates/base.html:195
 #, python-format
 msgid "%(theme_link)s theme by Penaz"
 msgstr ""
@@ -280,6 +280,10 @@ msgstr ""
 #: templates/partial/article_information.html:2
 #, python-format
 msgid "Permalink to %(art_title)s"
+msgstr ""
+
+#: templates/partial/lightbox.html:5
+msgid "Click on the dark background or on the X to close this lightbox."
 msgstr ""
 
 #: templates/partial/social.html:3

@@ -10,11 +10,10 @@
         {% block head %}
             {# Standard Meta #}
             <meta charset="UTF-8" />
-            <meta name="generator" content="Pelican">
+            <meta name="generator" content="Pelican" />
             <meta name="viewport" content="width=device-width" />
-            <meta name="supported-color-schemes" content="light dark">
-            <meta name="color-scheme" content="light dark">
-            <meta name="theme-color" content="{{THEME_COLOR|default("#1C1C1C")}}">
+            <meta name="color-scheme" content="light dark" />
+            <meta name="theme-color" content="{{THEME_COLOR|default("#1C1C1C")}}" />
             {# RSS Feeds #}
             {% if FEED_ALL_ATOM %}
                 <link href="{{ FEED_DOMAIN }}/{% if FEED_ALL_ATOM_URL %}{{ FEED_ALL_ATOM_URL }}{% else %}{{ FEED_ALL_ATOM }}{% endif %}" type="application/atom+xml" rel="alternate" title="{{_('%(sitename)s Full Atom Feed', sitename=SITENAME)}}" />
@@ -42,16 +41,22 @@
             {% endif %}
             {# CSS Styles #}
             {% block css %}
-            <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/styles/light.css" type="text/css" media="(prefers-color-scheme: no-preference), (prefers-color-scheme: light)" charset="utf-8">
-            <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/styles/dark.css" type="text/css" media="(prefers-color-scheme: dark)" charset="utf-8">
-            <link rel="preload" as="style" href="{{SITEURL}}/{{THEME_STATIC_DIR}}/styles/style.css" type="text/css" charset="utf-8"/>
-            <link rel="stylesheet" href="{{SITEURL}}/{{THEME_STATIC_DIR}}/styles/style.css" type="text/css" charset="utf-8"/>
-            <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/styles/style_mobile.css" type="text/css" media="handheld, screen and (max-width: 800px)" charset="utf-8">
+            <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/styles/light.css" type="text/css" />
+            <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/styles/dark.css" type="text/css" />
+            <link rel="preload" as="style" href="{{SITEURL}}/{{THEME_STATIC_DIR}}/styles/style.css" type="text/css" />
+            <link rel="stylesheet" href="{{SITEURL}}/{{THEME_STATIC_DIR}}/styles/style.css" type="text/css" />
+            <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/styles/style_mobile.css" type="text/css" media="screen and (max-width: 800px)" />
+            {% if LIGHTBOX_ENABLED | default(False) %}
+                <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/styles/lightbox.css" type="text/css" />
+            {% endif %}
             {% endblock css %}
             {# Javascript #}
             {% block javascript %}
-            <!-- Hack to avoid chrome to do a layout shift on load, check crbug.com/332189 and crbug.com/167083 -->
-            <script> </script>
+                {% if LIGHTBOX_ENABLED | default(False) %}
+                    <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/scripts/lightbox.js" defer></script>
+                {% endif %}
+                <!-- Hack to avoid chrome to do a layout shift on load, check crbug.com/332189 and crbug.com/167083 -->
+                <script> </script>
             {% endblock javascript %}
             {# Website Title #}
             <title>{% block title %}{{ SITENAME }}{% endblock title %}</title>
@@ -66,11 +71,11 @@
             {# Button for toggling sidebar #}
             <label for="menu_btn" id="menu_btn_lbl">&#9776;</label>
             {% if LOGO_IMAGE %}
-                <a href="{{SITEURL}}" alt="Home Page">
-                    <img class="siteheader_img" width="200px" height="200px" src="{{LOGO_IMAGE}}" alt="Logo {{SITENAME}}"/>
+                <a href="{{SITEURL}}" title="Home Page">
+                    <img class="siteheader_img" width="286" height="48" src="{{LOGO_IMAGE}}" alt="Logo {{SITENAME}}"/>
                 </a>
             {% else %}
-                <span class="siteheader"><a href="{{SITEURL}}" alt="Home Page">{{SITENAME}}</a></span>
+                <span class="siteheader"><a href="{{SITEURL}}" title="Home Page">{{SITENAME}}</a></span>
             {% endif %}
             {% if SITESUBTITLE %}
                 <h2 class="sitesubtitle mobile-hide">{{SITESUBTITLE}}</h2>
@@ -85,7 +90,7 @@
                 </form>
             {% endif %}
         </header>
-        <input type="checkbox" name="menu_btn" id="menu_btn">
+        <input type="checkbox" name="menu_btn" id="menu_btn" />
         <nav class="sidebar">
             {# Search For Mobile #}
             {% if SEARCHBOX_ENABLED | default(False) %}
@@ -107,7 +112,7 @@
             <span class="menutitle">{{ _('Categories') }}</span>
             <ul>
                 {% for cat, null in categories %}
-                    <li {% if cat == category %}class="active"{% endif %}><a href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a></li>
+                <li {% if cat == category %}class="active"{% endif %}><a href="{{ SITEURL }}/{{DEFAULT_LANG}}/{{ cat.url }}">{{ cat }}</a></li>
                 {% endfor %}
             </ul>
             {% endif %}
@@ -189,5 +194,12 @@
                 <p>{{ _('%(theme_link)s theme by Penaz', theme_link='<a href="https://github.com/Penaz91/Essent10" rel="noopener" target="_blank">Essent10</a>'|safe) }}</p>
             </div>
         </footer>
+        {% if LIGHTBOX_ENABLED | default(False) %}
+            <div id="lightboxcontainer">
+                {% include "partial/lightbox.html" %}
+            </div>
+        {% endif %}
+
+    <script src="{{SITEURL}}/{{THEME_STATIC_DIR}}/scripts/email_unscramble.js"></script>
     </body>
 </html>

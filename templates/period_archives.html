@@ -3,7 +3,7 @@
 {% block title %}{{ _('Archives for %(period)s - %(sitename)s', sitename=SITENAME, period=period|reverse|join(' ')) }}{% endblock %}
 
 {% block meta %}
-<meta name="description" content="{{ _('%(sitename)s - Archives for %(period)s', sitename=SITENAME, period=period|reverse|join(' ')) }}">
+<meta name="description" content="{{ _('%(sitename)s - Archives for %(period)s', sitename=SITENAME, period=period|reverse|join(' ')) }}" />
 {% endblock meta %}
 
 {% block breadcrumb_list %}

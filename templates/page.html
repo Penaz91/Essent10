@@ -5,10 +5,10 @@
 
 {% block css %}
 {{super()}}
-<link rel="preload" as="style" href="{{SITEURL}}/{{THEME_STATIC_DIR}}/styles/code_hilite.css" type="text/css" charset="utf-8"/>
-<link rel="stylesheet" href="{{SITEURL}}/{{THEME_STATIC_DIR}}/styles/code_hilite.css" type="text/css" charset="utf-8"/>
+<link rel="preload" as="style" href="{{SITEURL}}/{{THEME_STATIC_DIR}}/styles/code_hilite.css" type="text/css" />
+<link rel="stylesheet" href="{{SITEURL}}/{{THEME_STATIC_DIR}}/styles/code_hilite.css" type="text/css" />
 {% if SOCIAL_SHARING_ON_PAGES | default(False) %}
-<link rel="stylesheet" href="{{SITEURL}}/{{THEME_STATIC_DIR}}/styles/social.css" type="text/css" charset="utf-8">
+<link rel="stylesheet" href="{{SITEURL}}/{{THEME_STATIC_DIR}}/styles/social.css" type="text/css" />
 {% endif %}
 {% endblock css %}
 
