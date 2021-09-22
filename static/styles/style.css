@@ -455,6 +455,10 @@ div.cloud{
     text-align: center;
 }
 
+div.cloud ul{
+    margin-left: initial;
+}
+
 div.cloud ul li{
     display: inline-block;
     padding: .5rem 1rem;
