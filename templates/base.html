@@ -66,12 +66,12 @@
     </head>
     <body>
         {# Site Header #}
-        <a id="skip-link" class="sr-only" href="#content" title="Skip to content">Skip to content</a>
+        <a id="skip-to-navigation" class="sr-only" href="#navigation">{{_('Skip to navigation')}}</a>
         <header class="main-header">
             {# Button for toggling sidebar #}
-            <label for="menu_btn" id="menu_btn_lbl">&#9776;</label>
+            <label for="menu_btn" id="menu_btn_lbl" title="{{_('Toggle Menu')}}">&#9776;</label>
             {% if LOGO_IMAGE %}
-                <a href="{{SITEURL}}" title="Home Page">
+                <a href="{{SITEURL}}" title="{{_('Home Page')}}">
                     <img class="siteheader_img" width="286" height="48" src="{{LOGO_IMAGE}}" alt="Logo {{SITENAME}}"/>
                 </a>
             {% else %}
@@ -82,23 +82,24 @@
             {% endif %}
             {% if SEARCHBOX_ENABLED | default(False) %}
                 <div class="flex-spacer"></div>
-                <form class="search_form desktop" action="{{ SEARCH_ENGINE_ADDR }}" method="get" accept-charset="utf-8" target="_blank">
+                <form class="search_form desktop" action="{{ SEARCH_ENGINE_ADDR }}" method="get" accept-charset="utf-8" target="_blank" role="search">
                     <label class="sr-only" for="id_{{TEXT_QUERY_NAME}}_desktop">{{ _('Search') }}:</label>
-                    <input type="text" placeholder="{{ _('Search...') }}" name="{{TEXT_QUERY_NAME}}" id="id_{{TEXT_QUERY_NAME}}_desktop" value="" />
+                    <input type="text" placeholder="{{ _('Search...') }}" name="{{TEXT_QUERY_NAME}}" id="id_{{TEXT_QUERY_NAME}}_desktop" value="" aria-label="{{_('Search through site content')}}" />
                     <input type="hidden" name="{{SITE_LIMIT_VAR_NAME}}" id="id_{{SITE_LIMIT_VAR_NAME}}_desktop" value="{{ SITEURL }}" />
-                    <button class="btn" type="submit" name="search" id="id_search_desktop">&#x1f50d; {{ _('Search') }}</button>
+                    <button class="btn" type="submit" name="search" id="id_search_desktop" aria-label="{{_('Perform search')}}">&#x1f50d; {{ _('Search') }}</button>
                 </form>
             {% endif %}
         </header>
         <input type="checkbox" name="menu_btn" id="menu_btn" />
-        <nav class="sidebar">
+        <nav class="sidebar" id="navigation">
+            <a id="skip-to-content" class="sr-only" href="#content">{{_('Skip to content')}}</a>
             {# Search For Mobile #}
             {% if SEARCHBOX_ENABLED | default(False) %}
-                <form class="search_form mobile" action="{{ SEARCH_ENGINE_ADDR }}" method="get" accept-charset="utf-8" target="_blank">
+                <form class="search_form mobile" action="{{ SEARCH_ENGINE_ADDR }}" method="get" accept-charset="utf-8" target="_blank" role="search">
                     <label class="sr-only" for="id_{{TEXT_QUERY_NAME}}_mobile">{{ _('Search') }}:</label>
-                    <input type="text" placeholder="{{ _('Search...') }}" name="{{TEXT_QUERY_NAME}}" id="id_{{TEXT_QUERY_NAME}}_mobile" value="" />
+                    <input type="text" placeholder="{{ _('Search...') }}" name="{{TEXT_QUERY_NAME}}" id="id_{{TEXT_QUERY_NAME}}_mobile" value="" aria-label="{{_('Search through site content')}}"/>
                     <input type="hidden" name="{{SITE_LIMIT_VAR_NAME}}" id="id_{{SITE_LIMIT_VAR_NAME}}_mobile" value="{{ SITEURL }}" />
-                    <button class="btn" type="submit" name="search" id="id_search_mobile">&#x1f50d; {{ _('Search') }}</button>
+                    <button class="btn" type="submit" name="search" id="id_search_mobile" aria-label="{{_('Perform search')}}">&#x1f50d; {{ _('Search') }}</button>
                 </form>
             {% endif %}
             {# Standard Menu #}
@@ -139,8 +140,10 @@
                     {% endblock breadcrumbs %}
                 {% endif %}
                 <div id="content">
-                    {% block content %}
-                    {% endblock content %}
+                    <main>
+                        {% block content %}
+                        {% endblock content %}
+                    </main>
                 </div>
             </div>
         </div>
