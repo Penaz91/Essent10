@@ -10,7 +10,9 @@
         {% block head %}
             {# Standard Meta #}
             <meta charset="UTF-8" />
-            <meta name="generator" content="Pelican" />
+            {# Additional Meta Tags #}
+            {% block meta %}{% endblock meta %}
+            <meta name="generator" content="Pelican">
             <meta name="viewport" content="width=device-width" />
             <meta name="color-scheme" content="light dark" />
             <meta name="theme-color" content="{{THEME_COLOR|default("#1C1C1C")}}" />
@@ -60,8 +62,6 @@
             {% endblock javascript %}
             {# Website Title #}
             <title>{% block title %}{{ SITENAME }}{% endblock title %}</title>
-            {# Additional Meta Tags #}
-            {% block meta %}{% endblock meta %}
         {% endblock head %}
     </head>
     <body>
