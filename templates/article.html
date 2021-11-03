@@ -70,7 +70,7 @@
             {% endif %}
             {% if article.category %}
             <div id="entry-category">
-                <span class="font-bold">{{ _('Category') }}:</span> <a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a>
+                <span class="font-bold">{{ _('Category') }}:</span> <a href="{{ article.category.url }}">{{ article.category }}</a>
             </div>
             {% endif %}
             {% if article.tags %}
