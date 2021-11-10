@@ -24,6 +24,16 @@
     {{super()}}
     {% if page.description %}
     <meta name="description" content="{{page.description}}" />
+    {% else %}
+        {% if page.summary %}
+            <meta name="description" content="{{page.summary | striptags}}" />
+        {% endif %}
+    {% endif %}
+    {% if page.keywords %}
+    <meta name="keywords" content="{{page.keywords}}" />
+    {% endif %}
+    {% if page.author %}
+    <meta name="author" content="{{page.author}}" />
     {% endif %}
 {% endblock %}
 

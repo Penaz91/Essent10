@@ -33,6 +33,12 @@
 {% for tag in article.tags %}
 <meta name="tags" content="{{tag}}" />
 {% endfor %}
+{% if article.keywords %}
+<meta name="keywords" content="{{article.keywords}}" />
+{% endif %}
+{% if article.author %}
+<meta name="author" content="{{article.author}}" />
+{% endif %}
 {% endblock meta %}
 
 {% block breadcrumb_list %}
